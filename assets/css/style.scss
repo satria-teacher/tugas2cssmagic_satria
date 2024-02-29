@@ -1,0 +1,238 @@
+@import 'modules/variable';
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+    box-sizing: border-box;
+}
+body {
+	line-height: 1;
+    font-family: Arial, sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@mixin box-hflex{
+    display: flex;
+    justify-content: center;
+}
+@mixin box-vflex{
+}
+@mixin k-50{
+    display: inline-block;
+    width: 50%;
+}
+@mixin k-30{
+    display: inline-block;
+    width: 30.9%;
+}
+
+@mixin pad-container{
+    padding-left: 170px;
+    padding-right: 170px;
+}
+h2{
+    font-size: 42px;
+    font-weight: bolder;
+    u{
+        text-decoration-color: $warnaKedua;
+        text-decoration-thickness: 5px;
+    }
+}
+ #contain-1 {
+    background-color: $warnaPutih;
+    height: 190px;
+}
+#contain-2{
+    @include box-hflex();
+    @include pad-container();
+    height: 670px;
+    background-image: url('../Images/bg-aboutus.png');
+    background-blend-mode: overlay;
+    background-size:cover;
+    background-color: $warnaUtama;
+    letter-spacing: 2px;
+    font-stretch:ultra-expanded;
+    line-height: 38px;
+
+    .kiri{
+        @include k-50();
+        @include box-hflex();
+        padding-bottom: 90px;
+        .gambar-box{
+            height: $aboutImageHeight;
+            background-color: $warnaGlass;
+            width: 510px;
+            display: inline;
+            margin-top: -90px;
+            border-radius: $normalR;
+            box-shadow: $shadowBlack;
+            padding: $imageBorderSize;
+            img{
+                width: 100%;
+                border-radius: $normalR;
+                object-fit: cover;
+                height: ($aboutImageHeight - ($imageBorderSize * 2));
+            }
+        }
+    }
+    .kanan{
+        @include k-50();
+        @include box-vflex();
+        height: 100%;
+        padding: 100px;
+        .caption{
+            margin-top: 36px;
+            font-size: 32px;
+            font-weight: bolder;
+        }
+        .desc{
+            margin-top: 36px;
+            font-size: 24px;
+            color: $warnaAbu;
+            // font-weight: bolder;
+        }
+}
+}
+.round-button {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 20px; 
+    border-radius: 40px; 
+    background-color: $warnaKeempat;
+    color: $warnaKedua; 
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efek hover */
+.round-button:hover {
+    background-color: $warnaKedua; 
+    color: $warnaKeempat;
+}
+
+#contain-3{
+    @include pad-container();
+    padding-top: 180px;
+    padding-bottom: 180px;
+    box-sizing: border-box;
+    .card{
+        margin-top: 40px;
+        @include k-30();
+        box-sizing: border-box;
+        padding: 40px 35px;
+        box-shadow: $shadowBlack;
+        height: 530px;
+        border-radius: $normalR;
+        letter-spacing: 2px;
+        line-height: 27px;
+
+        .card-img{
+            position: relative;
+            height: 310px;
+            border-radius: $normalR;
+            background-color: #000;
+            overflow: hidden;
+            @include box-hflex();
+            img{
+                width: auto;
+                height: 100%;
+            }
+            .star-border{
+                position: absolute;
+                background-color: $warnaGlass;
+                top: 10px;
+                left: 10px;
+                padding: 7px;
+                border-radius: $normalR+10;
+                div{
+                    border-radius: $normalR;
+                    padding: 5px 20px;
+                    background-color: $warnaPutih;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    color: $warnaKeempat;
+                    img{
+                        width: 20px;
+                    }
+                }
+            }
+        }
+        .card-title{
+            @include box-hflex();
+            justify-content:space-between;
+            padding: 30px 20px 15px;
+            font-size: 32px;
+            font-weight: bolder;
+        }
+        .card-desc{
+            @include box-hflex();
+            justify-content:space-between;
+            padding: 0px 20px;
+            color: $warnaAbu;
+            font-size: 20px;
+            font-weight: bold;
+            .desc{
+                margin-top: 10px;
+                margin-right: 45px;
+            }
+            .beli{
+                background-color: $warnaKedua;
+                padding: 14px 16px 10px;
+                border-radius: $roundR;
+                img{
+                    width: 25px;
+                }
+            }
+            .beli:hover{
+                background-color: $warnaKeempat;
+                cursor: pointer;
+            }
+
+        }
+    }
+    .card:nth-child(3n){
+        margin-left: 3.3%;
+        margin-right: 3.3%;
+    }
+ }
+
+
+
+
+
